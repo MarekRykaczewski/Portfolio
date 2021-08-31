@@ -1,3 +1,14 @@
+/* 
+
+Data Exploration in SQL
+
+Includes: Joins, Aggregate Functions, Casting Data Types, Common Table Expressions, Temporary Tables, Creating Views
+
+Data Source:
+Hannah Ritchie, Edouard Mathieu, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Esteban Ortiz-Ospina, Joe Hasell, Bobbie Macdonald, Diana Beltekian and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]
+
+*/
+
 SELECT Location, date, total_cases, new_cases, total_deaths, population
 FROM CovidDeaths
 ORDER BY 1,2
@@ -6,14 +17,14 @@ ORDER BY 1,2
 
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases) * 100 as DeathPercentage
 FROM CovidDeaths
-WHERE Location = 'Poland'
+Where continent is not null 
 ORDER BY 1,2
 
 -- Total Cases vs Population
 
 SELECT Location, date, population, total_cases, (total_cases/population) * 100 as InfectionPercentage
 FROM CovidDeaths
-WHERE Location = 'Poland'
+Where continent is not null 
 ORDER BY 1,2
 
 -- Countries with Highest Infection Rate 
@@ -100,10 +111,10 @@ SUM(cast(vac.new_vaccinations as bigint)) OVER (Partition by dea.location ORDER 
 	Join CovidVaccinations vac
 	ON dea.location = vac.location
 	AND dea.date = vac.date
-Select *, (RollingVaccinations/population) * 100
+SELECT *, (RollingVaccinations/population) * 100
 FROM #PercentPopulationVaccinated
 
--- View
+-- Creating a View which can be used for later visualizations
 
 CREATE VIEW PercentPopulationVaccinated as
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
