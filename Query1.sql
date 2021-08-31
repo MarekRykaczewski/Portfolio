@@ -1,11 +1,13 @@
 /* 
 
-Data Exploration in SQL
+COVID-19 Data Exploration using SQL.
 
 Includes: Joins, Aggregate Functions, Casting Data Types, Common Table Expressions, Temporary Tables, Creating Views
 
 Data Source:
 Hannah Ritchie, Edouard Mathieu, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Esteban Ortiz-Ospina, Joe Hasell, Bobbie Macdonald, Diana Beltekian and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]
+
+Data downloaded on August 30th 2021
 
 */
 
