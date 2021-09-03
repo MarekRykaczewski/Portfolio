@@ -39,6 +39,14 @@ WHERE continent is not null
 GROUP BY population, location
 ORDER BY PercentPopulationInfected DESC
 
+-- Countries with highest infection rate by date
+
+SELECT Location, population, date, MAX(total_cases) as HighestInfectionCount, MAX((total_cases/population)) * 100 as PercentPopulationInfected
+FROM CovidDeaths
+WHERE continent is not null
+GROUP BY population, location, date
+ORDER BY PercentPopulationInfected DESC
+
 -- Countries with highest death count
 
 SELECT Location,  MAX(cast(Total_deaths as int)) as TotalDeathCount
