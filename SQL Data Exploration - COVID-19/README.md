@@ -1,5 +1,5 @@
 # SQL Data Exploration - COVID-19
 
-**Project Goal:** Minor data cleaning in Excel to prepare for use in SQL. Create new database in SQL Server Managment Studio, make tables for each file. Explore data and save useful queries. Visualise findings in Tableau.
+**Project Goal:** Load data into Excel and preform some data cleaning to prepare for use in SQL. Create new database in SQL Server Managment Studio, import Excel worksheets and make tables for each file. Search for insights and save any queries. Visualise findings in Tableau.
 
-**Skills in use:** SQL, Excel, Tableau
+**Skills Used:** SQL, Excel, Tableau
